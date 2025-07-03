@@ -20,19 +20,11 @@
         color: white;
         overflow-x: hidden;
         line-height: 1.6;
-        background: linear-gradient(
-          135deg,
-          #0a0a0a 0%,
-          #1a1a2e 25%,
-          #16213e 50%,
-          #0f3460 75%,
-          #533483 100%
-        );
-        background-attachment: fixed;
+        background: #000000;
         min-height: 100vh;
       }
 
-      /* Particle Background */
+      /* Enhanced Brighter Space Theme Particle Background */
       .particle-bg {
         position: fixed;
         top: 0;
@@ -40,28 +32,149 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        opacity: 0.4;
+        opacity: 0.9;
         pointer-events: none;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(13, 13, 40, 0.8) 0%,
+          rgba(5, 5, 15, 0.9) 50%,
+          #000000 100%
+        );
       }
 
       .particle {
         position: absolute;
-        width: 2px;
-        height: 2px;
-        background: #00d4ff;
         border-radius: 50%;
-        box-shadow: 0 0 4px #00d4ff;
         animation: float 8s ease-in-out infinite;
       }
 
-      @keyframes float {
+      /* Brighter space particles with enhanced glow */
+      .particle.star {
+        width: 2px;
+        height: 2px;
+        background: #ffffff;
+        box-shadow: 
+          0 0 6px #ffffff,
+          0 0 12px #ffffff,
+          0 0 18px rgba(255, 255, 255, 0.8);
+        animation: brightTwinkle 2.5s ease-in-out infinite;
+      }
+
+      .particle.star-blue {
+        width: 3px;
+        height: 3px;
+        background: #00d4ff;
+        box-shadow: 
+          0 0 8px #00d4ff,
+          0 0 16px #00d4ff,
+          0 0 24px rgba(0, 212, 255, 0.8),
+          0 0 32px rgba(0, 212, 255, 0.6);
+        animation: brightTwinkle 3s ease-in-out infinite;
+      }
+
+      .particle.star-cyan {
+        width: 2.5px;
+        height: 2.5px;
+        background: #4ecdc4;
+        box-shadow: 
+          0 0 7px #4ecdc4,
+          0 0 14px #4ecdc4,
+          0 0 21px rgba(78, 205, 196, 0.8),
+          0 0 28px rgba(78, 205, 196, 0.6);
+        animation: brightTwinkle 3.5s ease-in-out infinite;
+      }
+
+      .particle.star-purple {
+        width: 2px;
+        height: 2px;
+        background: #9d4edd;
+        box-shadow: 
+          0 0 6px #9d4edd,
+          0 0 12px #9d4edd,
+          0 0 18px rgba(157, 78, 221, 0.8);
+        animation: brightTwinkle 4s ease-in-out infinite;
+      }
+
+      .particle.star-pink {
+        width: 1.5px;
+        height: 1.5px;
+        background: #ff6b6b;
+        box-shadow: 
+          0 0 5px #ff6b6b,
+          0 0 10px #ff6b6b,
+          0 0 15px rgba(255, 107, 107, 0.8);
+        animation: brightTwinkle 2.8s ease-in-out infinite;
+      }
+
+      .particle.nebula {
+        width: 4px;
+        height: 4px;
+        background: rgba(138, 43, 226, 0.8);
+        box-shadow: 
+          0 0 10px rgba(138, 43, 226, 1),
+          0 0 20px rgba(138, 43, 226, 0.8),
+          0 0 30px rgba(138, 43, 226, 0.6),
+          0 0 40px rgba(138, 43, 226, 0.4);
+        animation: brightFloat 10s ease-in-out infinite;
+      }
+
+      .particle.comet {
+        width: 1px;
+        height: 8px;
+        background: linear-gradient(to bottom, #ffffff, transparent);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        box-shadow: 
+          0 0 4px #ffffff,
+          0 0 8px #ffffff,
+          0 0 12px rgba(255, 255, 255, 0.6);
+        animation: shooting 15s linear infinite;
+      }
+
+      /* Enhanced brighter animations */
+      @keyframes brightFloat {
         0%, 100% {
           transform: translateY(0px) translateX(0px);
-          opacity: 0.4;
+          opacity: 0.6;
         }
         50% {
-          transform: translateY(-30px) translateX(10px);
+          transform: translateY(-40px) translateX(15px);
           opacity: 1;
+        }
+      }
+
+      @keyframes brightTwinkle {
+        0%, 100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        25% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
+        }
+        75% {
+          opacity: 0.9;
+          transform: scale(1.2);
+        }
+      }
+
+      @keyframes shooting {
+        0% {
+          transform: translateX(-100px) translateY(-100px) rotate(45deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(45deg);
+          opacity: 0;
         }
       }
 
@@ -73,7 +186,7 @@
         max-width: 100vw;
       }
 
-      /* Hero Section */
+      /* Hero Section - Dark Theme to Match Other Sections */
       .hero-section {
         height: 100vh;
         display: flex;
@@ -82,6 +195,16 @@
         text-align: center;
         position: relative;
         width: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.95) 0%,
+          rgba(5, 5, 15, 0.9) 20%,
+          rgba(10, 10, 30, 0.8) 40%,
+          rgba(15, 8, 40, 0.8) 60%,
+          rgba(10, 10, 30, 0.8) 80%,
+          rgba(0, 0, 0, 0.95) 100%
+        );
+        background-attachment: fixed;
       }
 
       .hero-content {
@@ -101,7 +224,7 @@
         }
       }
 
-      /* Clean Logo with Glow Only */
+      /* Enhanced Space Logo */
       .hero-logo {
         max-width: 400px;
         width: 100%;
@@ -109,16 +232,18 @@
         margin-bottom: 40px;
         opacity: 0;
         animation: logoFadeIn 2s ease-out 0.5s forwards;
-        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6))
-                drop-shadow(0 0 40px rgba(255, 107, 107, 0.4))
-                drop-shadow(0 0 60px rgba(78, 205, 196, 0.3));
+        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8))
+                drop-shadow(0 0 50px rgba(255, 107, 107, 0.6))
+                drop-shadow(0 0 75px rgba(78, 205, 196, 0.4))
+                drop-shadow(0 0 100px rgba(138, 43, 226, 0.3));
         transition: filter 0.3s ease;
       }
 
       .hero-logo:hover {
-        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8))
-                drop-shadow(0 0 50px rgba(255, 107, 107, 0.6))
-                drop-shadow(0 0 75px rgba(78, 205, 196, 0.5));
+        filter: drop-shadow(0 0 30px rgba(0, 212, 255, 1))
+                drop-shadow(0 0 60px rgba(255, 107, 107, 0.8))
+                drop-shadow(0 0 90px rgba(78, 205, 196, 0.6))
+                drop-shadow(0 0 120px rgba(138, 43, 226, 0.5));
       }
 
       @keyframes logoFadeIn {
@@ -130,38 +255,52 @@
         100% {
           opacity: 1;
           transform: translateY(0);
-          filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.6))
-                  drop-shadow(0 0 40px rgba(255, 107, 107, 0.4))
-                  drop-shadow(0 0 60px rgba(78, 205, 196, 0.3));
+          filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8))
+                  drop-shadow(0 0 50px rgba(255, 107, 107, 0.6))
+                  drop-shadow(0 0 75px rgba(78, 205, 196, 0.4))
+                  drop-shadow(0 0 100px rgba(138, 43, 226, 0.3));
         }
       }
 
-      /* Hero Title */
+      /* Space-themed Hero Title */
       .hero-title {
         font-size: clamp(2.5rem, 8vw, 5rem);
         font-weight: 900;
-        background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4, #45b7d1);
+        background: linear-gradient(
+          45deg, 
+          #00d4ff 0%, 
+          #4ecdc4 25%, 
+          #ff6b6b 50%, 
+          #9d4edd 75%, 
+          #00d4ff 100%
+        );
         background-size: 400% 400%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
+        animation: cosmicShift 6s ease-in-out infinite;
         margin-bottom: 20px;
-        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-        letter-spacing: 3px;
+        text-shadow: 0 0 40px rgba(0, 212, 255, 0.7);
+        letter-spacing: 4px;
         position: relative;
       }
 
-      @keyframes gradientShift {
+      @keyframes cosmicShift {
         0%, 100% {
           background-position: 0% 50%;
         }
+        25% {
+          background-position: 100% 0%;
+        }
         50% {
-          background-position: 100% 50%;
+          background-position: 100% 100%;
+        }
+        75% {
+          background-position: 0% 100%;
         }
       }
 
-      /* Title Glow Effect */
+      /* Enhanced Cosmic Glow Effect */
       .hero-title::before {
         content: "UBISOFT AI INNOVATION";
         position: absolute;
@@ -169,14 +308,21 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4, #45b7d1);
+        background: linear-gradient(
+          45deg, 
+          #00d4ff 0%, 
+          #4ecdc4 25%, 
+          #ff6b6b 50%, 
+          #9d4edd 75%, 
+          #00d4ff 100%
+        );
         background-size: 400% 400%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
-        filter: blur(2px);
-        opacity: 0.7;
+        animation: cosmicShift 6s ease-in-out infinite;
+        filter: blur(3px);
+        opacity: 0.8;
         z-index: -1;
       }
 
@@ -187,8 +333,8 @@
         opacity: 0;
         animation: subtitleFadeIn 1.5s ease-out 1s forwards;
         font-weight: 300;
-        letter-spacing: 1px;
-        text-shadow: 0 0 20px rgba(184, 198, 219, 0.5);
+        letter-spacing: 2px;
+        text-shadow: 0 0 25px rgba(184, 198, 219, 0.6);
       }
 
       @keyframes subtitleFadeIn {
@@ -197,7 +343,7 @@
         }
       }
 
-      /* Enhanced Scroll Indicator */
+      /* Space-themed Scroll Indicator */
       .scroll-indicator {
         position: absolute;
         bottom: 30px;
@@ -207,11 +353,12 @@
         font-size: 14px;
         text-align: center;
         animation: bounce 2s infinite;
-        background: rgba(0, 212, 255, 0.1);
+        background: rgba(0, 212, 255, 0.08);
         padding: 15px 20px;
         border-radius: 25px;
-        border: 1px solid rgba(0, 212, 255, 0.3);
-        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.4);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
       }
 
       @keyframes bounce {
@@ -239,11 +386,11 @@
         }
         50% {
           opacity: 1;
-          transform: scale(1.2);
+          transform: scale(1.3);
         }
       }
 
-      /* Content Sections */
+      /* Content Sections - Space Theme */
       .content-section {
         position: relative;
         width: 100%;
@@ -267,7 +414,7 @@
         font-weight: 700;
         margin-bottom: 30px;
         color: #00d4ff;
-        text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        text-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
         position: relative;
         display: inline-block;
       }
@@ -282,6 +429,7 @@
         height: 4px;
         background: linear-gradient(90deg, #00d4ff, #ff6b6b);
         border-radius: 2px;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
       }
 
       .section-description {
@@ -312,14 +460,15 @@
       }
 
       .tech-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
+        background: rgba(13, 13, 40, 0.6);
+        backdrop-filter: blur(20px);
         border-radius: 20px;
         padding: 40px 30px;
         border: 1px solid rgba(0, 212, 255, 0.3);
         transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
 
       .tech-card::before {
@@ -340,9 +489,9 @@
 
       .tech-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 20px 50px rgba(0, 212, 255, 0.4);
         border-color: #00d4ff;
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(13, 13, 40, 0.8);
       }
 
       .tech-icon {
@@ -356,14 +505,17 @@
         margin: 0 auto 20px;
         font-size: 24px;
         animation: pulse 3s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
       }
 
       @keyframes pulse {
         0%, 100% {
           transform: scale(1);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
         50% {
           transform: scale(1.05);
+          box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
         }
       }
 
@@ -381,33 +533,61 @@
         opacity: 0.9;
       }
 
-      /* Alternating Section Backgrounds */
+      /* Deep Space Section Backgrounds */
       .section-1 {
-        background: linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(22, 33, 62, 0.3));
+        background: linear-gradient(
+          135deg, 
+          rgba(5, 5, 15, 0.8) 0%, 
+          rgba(10, 10, 30, 0.6) 50%, 
+          rgba(5, 5, 15, 0.8) 100%
+        );
       }
 
       .section-2 {
-        background: linear-gradient(135deg, rgba(22, 33, 62, 0.3), rgba(15, 52, 96, 0.3));
+        background: linear-gradient(
+          135deg, 
+          rgba(10, 10, 30, 0.6) 0%, 
+          rgba(15, 8, 40, 0.7) 50%, 
+          rgba(10, 10, 30, 0.6) 100%
+        );
       }
 
       .section-3 {
-        background: linear-gradient(135deg, rgba(15, 52, 96, 0.3), rgba(83, 52, 131, 0.3));
+        background: linear-gradient(
+          135deg, 
+          rgba(15, 8, 40, 0.7) 0%, 
+          rgba(20, 5, 50, 0.8) 50%, 
+          rgba(15, 8, 40, 0.7) 100%
+        );
       }
 
       .section-4 {
-        background: linear-gradient(135deg, rgba(83, 52, 131, 0.3), rgba(26, 26, 46, 0.3));
+        background: linear-gradient(
+          135deg, 
+          rgba(20, 5, 50, 0.8) 0%, 
+          rgba(15, 8, 40, 0.7) 50%, 
+          rgba(20, 5, 50, 0.8) 100%
+        );
       }
 
       .section-5 {
-        background: linear-gradient(135deg, rgba(26, 26, 46, 0.3), rgba(10, 10, 10, 0.3));
+        background: linear-gradient(
+          135deg, 
+          rgba(15, 8, 40, 0.7) 0%, 
+          rgba(5, 5, 15, 0.8) 50%, 
+          rgba(0, 0, 0, 0.9) 100%
+        );
       }
 
-      /* Perfect Centered Conclusion Section */
+      /* Deep Space Conclusion Section */
       .conclusion-section {
         background: linear-gradient(
           135deg,
-          rgba(0, 212, 255, 0.1),
-          rgba(255, 107, 107, 0.1)
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(13, 13, 40, 0.7) 25%,
+          rgba(26, 13, 52, 0.8) 50%,
+          rgba(13, 13, 40, 0.7) 75%,
+          rgba(0, 0, 0, 0.9) 100%
         );
         padding: 100px 20px;
         position: relative;
@@ -456,34 +636,37 @@
         font-weight: 700;
         font-size: clamp(1rem, 3vw, 1.2rem);
         transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
         margin: 20px auto 0 auto;
         text-transform: uppercase;
         letter-spacing: 1px;
         text-align: center;
+        border: 1px solid rgba(0, 212, 255, 0.3);
       }
 
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6);
+        box-shadow: 0 20px 50px rgba(0, 212, 255, 0.7);
+        background: linear-gradient(135deg, #00e5ff, #5dddd6);
       }
 
-      /* Scroll Progress */
+      /* Cosmic Scroll Progress */
       .scroll-progress {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 4px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.8);
         z-index: 1000;
       }
 
       .scroll-progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, #00d4ff, #ff6b6b, #4ecdc4);
+        background: linear-gradient(90deg, #00d4ff, #ff6b6b, #4ecdc4, #9d4edd);
         width: 0%;
         transition: width 0.1s ease;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
       }
 
       /* Scroll Animations */
@@ -607,24 +790,27 @@
     </style>
   </head>
   <body>
-    <!-- Scroll Progress -->
+    <!-- Cosmic Scroll Progress -->
     <div class="scroll-progress">
       <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Particle Background -->
+    <!-- Enhanced Brighter Space Particle Background -->
     <div class="particle-bg" id="particleContainer"></div>
 
     <!-- Main Container -->
     <div class="main-container">
-      <!-- Hero Section -->
+      <!-- Dark Hero Section -->
       <section class="hero-section">
         <div class="hero-content">
           <img src="images/logo.png" alt="Ubisoft Logo" class="hero-logo" />
           <h1 class="hero-title">UBISOFT AI INNOVATION</h1>
           <p class="hero-subtitle">การปฏิวัติการพัฒนาเกมด้วยปัญญาประดิษฐ์</p>
         </div>
-        
+        <div class="scroll-indicator">
+          <div class="scroll-arrow">↓</div>
+          เลื่อนลงเพื่อดูเพิ่มเติม
+        </div>
       </section>
 
       <!-- Section 1: AI Scriptwriting -->
@@ -762,7 +948,7 @@
         </div>
       </section>
 
-      <!-- Perfect Centered Conclusion Section -->
+      <!-- Deep Space Conclusion Section -->
       <section class="conclusion-section">
         <div class="section-content fade-in">
           <h2 class="section-title">สรุป: อนาคตของการพัฒนาเกม</h2>
@@ -783,29 +969,97 @@
       let isScrolling = false;
       let particleContainer = null;
 
-      // Create particles
-      function createParticles() {
+      // Enhanced brighter space particle creation
+      function createBrighterSpaceParticles() {
         particleContainer = document.getElementById("particleContainer");
         if (!particleContainer) return;
 
         const isMobile = window.innerWidth <= 768;
-        const particleCount = isMobile ? 30 : 60;
+        const starCount = isMobile ? 80 : 160;           // เพิ่มดาวขาว
+        const blueStarCount = isMobile ? 25 : 50;        // เพิ่มดาวฟ้า
+        const cyanStarCount = isMobile ? 20 : 40;        // เพิ่มดาวฟ้าอมเขียว
+        const purpleStarCount = isMobile ? 15 : 30;      // เพิ่มดาวม่วง
+        const pinkStarCount = isMobile ? 12 : 25;        // เพิ่มดาวชมพู
+        const nebulaCount = isMobile ? 8 : 20;           // เพิ่มเนบิวลา
+        const cometCount = isMobile ? 2 : 5;             // เพิ่มดาวหาง
 
         // Clear existing particles
         particleContainer.innerHTML = "";
 
-        for (let i = 0; i < particleCount; i++) {
+        // Create white stars
+        for (let i = 0; i < starCount; i++) {
           const particle = document.createElement("div");
-          particle.className = "particle";
-          
-          // Random position
+          particle.className = "particle star";
           particle.style.left = Math.random() * 100 + "%";
           particle.style.top = Math.random() * 100 + "%";
-          
-          // Random animation delay and duration
+          particle.style.animationDelay = Math.random() * 5 + "s";
+          particle.style.animationDuration = (Math.random() * 2 + 2.5) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create blue stars
+        for (let i = 0; i < blueStarCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle star-blue";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = (Math.random() * 2 + 3) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create cyan stars
+        for (let i = 0; i < cyanStarCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle star-cyan";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 7 + "s";
+          particle.style.animationDuration = (Math.random() * 2 + 3.5) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create purple stars
+        for (let i = 0; i < purpleStarCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle star-purple";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
           particle.style.animationDelay = Math.random() * 8 + "s";
-          particle.style.animationDuration = (Math.random() * 4 + 6) + "s";
-          
+          particle.style.animationDuration = (Math.random() * 2 + 4) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create pink stars
+        for (let i = 0; i < pinkStarCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle star-pink";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = (Math.random() * 1.5 + 2.8) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create nebula particles
+        for (let i = 0; i < nebulaCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle nebula";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 10 + "s";
+          particle.style.animationDuration = (Math.random() * 5 + 10) + "s";
+          particleContainer.appendChild(particle);
+        }
+
+        // Create shooting comets
+        for (let i = 0; i < cometCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle comet";
+          particle.style.left = Math.random() * 20 + "%";
+          particle.style.top = Math.random() * 20 + "%";
+          particle.style.animationDelay = Math.random() * 15 + "s";
+          particle.style.animationDuration = "15s";
           particleContainer.appendChild(particle);
         }
       }
@@ -891,8 +1145,8 @@
       // Main initialization
       function init() {
         try {
-          // Create particles
-          createParticles();
+          // Create brighter space particles
+          createBrighterSpaceParticles();
           
           // Setup scroll animations
           setupScrollAnimations();
@@ -908,12 +1162,12 @@
           updateScrollProgress();
           
           // Handle resize
-          const debouncedResizeHandler = debounce(createParticles, 250);
+          const debouncedResizeHandler = debounce(createBrighterSpaceParticles, 250);
           window.addEventListener('resize', debouncedResizeHandler);
           
           // Handle orientation change
           window.addEventListener('orientationchange', () => {
-            setTimeout(createParticles, 100);
+            setTimeout(createBrighterSpaceParticles, 100);
           });
 
         } catch (error) {
